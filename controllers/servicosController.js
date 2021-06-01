@@ -23,7 +23,11 @@ return response.render('adminServicos', {titulo:'Servicos', servicos });
 
     },
     salvar: (request, response)=> {
-        let {nome, descricao, preco, ilustracao} = request.body;
+        let {nome, descricao, preco } = request.body;
+
+        //let ilustracao = request.files [0].originalname; 
+        let ilustracao =request.file.path;
+
 
         servicos.push({id: uuid(), nome, descricao, preco, ilustracao });
         let dadosJson = JSON.stringify(servicos);
