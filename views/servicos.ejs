@@ -4,14 +4,14 @@
         <section class="servicos-lista">
             <div class="container">
                 <h1>Serviços</h1>
-                <% for(let servico of servicos) {%>
+                <% for(let servico of servicos) { %>
 
                 <article>
                     <div class="thumb" style ="background-image: url('/uploads/<%= servico.ilustracao %>');"></div>
                     <div class="info">
                         <h2> <%= servico.nome %></h2>                        
-                        <p> <%= R$<servico.descricao%></p>
-                        <p> <%= R$<servico.preco%></p>
+                        <p> R$<%= servico.preco %></p>
+                        <p> <%= servico.descricao %></p>
                         <a href="#" class="btn btn-primary">agendar</a>
                     </div>
                 </article>

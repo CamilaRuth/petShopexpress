@@ -1,7 +1,7 @@
 <%- include('./partials/header'); %>
 <main class="admin">
     <div class="container">
-        <h1>Painel administrativo</h1>
+        <h1>Painel Administrativo</h1>
 
         <section>
             <h2>Serviços</h2>
@@ -20,7 +20,7 @@
                     <% for (let servico of servicos) { %>
                     <tr>
                         <td><%= servico.nome %></td>
-                        <td>R$ <%= servico.preco %></td>
+                        <td>R$<%= servico.preco %></td>
                         <td><%= servico.descricao %></td>
                         <td class="text-center">
                             <a href="/admin/servicos/editar/<%= servico.id %>" class="btn btn-gray">editar</a>

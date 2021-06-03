@@ -3,7 +3,7 @@
     <div class="container">
         <h1>Painel Administrativo</h1>
         <a href="/admin/servicos"> voltar para lista de serviços</a>
-        <% if(tupeof servico !== 'undefined') { %> 
+        <% if(typeof servico !== 'undefined') { %> 
 
         <form action="/admin/servicos/editar/<%= servico.id %>/?_method=PUT" method="POST" enctype="multipart/form-data">
             <fieldset>

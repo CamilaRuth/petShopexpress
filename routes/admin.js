@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({
-  storage
+  storage: storage
 });
 
 //*o codigo usado sem render*
@@ -25,7 +25,7 @@ const upload = multer({
 
 router.get('/', (request, response) => {
   response.render('admin', {
-    titulo: 'Painel administrativo'
+    titulo: 'Painel Administrativo'
   });
 });
 

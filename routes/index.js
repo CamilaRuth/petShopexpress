@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const petsController = require('../controllers/petsController');
-const servicosController = require('../controllers/servicosController');
-const contatosController = require('../controllers/contatosController');
-const institucionalController = require( '../controllers/institucionalController');
+//const servicosController = require('../controllers/servicosController');
+//const contatosController = require('../controllers/contatosController');
+const institucionalController = require('../controllers/institucionalController');
 
 
 // rotas para paginas institucionais
