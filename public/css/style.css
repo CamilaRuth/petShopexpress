@@ -234,6 +234,8 @@ section.servicos-lista article .thumb {
     background-color: #555;
     margin: 0 30px 30px;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 section.servicos-lista article .info {
