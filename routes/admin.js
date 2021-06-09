@@ -3,6 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const router = express.Router(); //chama metodode querencia rotas
 const servicosController = require('../controllers/servicosController');
+const validaCadastroServico = require('../middlewares/validacao/servico');
 
 const storage = multer.diskStorage({
   destination: (request, filename, cb) => {
@@ -35,7 +36,7 @@ router.get('/servicos', servicosController.index);
 
 router.get('/servicos/cadastro', servicosController.cadastro);
 
-router.post('/servicos/cadastro', upload.single('ilustracao'), servicosController.salvar);
+router.post('/servicos/cadastro', upload.single('ilustracao'), validaCadastroServico, servicosController.salvar);
 
 router.get('/servicos/editar/:id', servicosController.editar);
 
