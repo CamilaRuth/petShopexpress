@@ -1,0 +1,20 @@
+[
+    {
+        "id": "ca8b511c-eb9f-4893-a0a8-bfd967f093d7",
+        "nome": "cass",
+        "email": "camilinha_ruth@hotmail.com",
+        "senha": "$2b$10$8/dOa/S0cO7ePraLXXdlm.rr7OXmRnmWLcAVUBay/DqW6TKvelM8S"
+    },
+    {
+        "id": "04898c8e-751e-496e-a200-329bab6201ec",
+        "nome": "camila",
+        "email": "camilinha_ruth@hotmail.com",
+        "senha": "$2b$10$aYIfGdrZWYp5CKAYM5HF2uoQVhEHO2Yp3fBPpvx/4/M7RFksy8nJ6"
+    },
+    {
+        "id": "748a8a69-76fe-4f80-aee2-397e2d0647d3",
+        "nome": "camila",
+        "email": "diogenes_comercial@hotmail.com",
+        "senha": "$2b$10$zE53p/1nEYqS8Srim3tZ6O9Zs.0VgDbT3YPpob8jR/R8vTjQzW5vO"
+    }
+]

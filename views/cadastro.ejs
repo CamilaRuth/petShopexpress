@@ -1,5 +1,25 @@
 <%- include('./partials/header'); %>
     <main>
-        <!-- aqui vem o cadastro -->
+        <div class="container">
+        <img src="/img/ilustra-user.png" alt="ficha cadastral">
+        <div class="box-white">
+            <h1>Cadastre-se</h1>
+
+            <form action="/cadastro" method="POST">
+                <label for="nome">nome</label>
+                <input type="text" name="nome" id="nome">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+
+                <label for="senha">senha</label>
+                <input type="password" name="senha" id="senha">
+
+                <button type="submit">enviar</button>
+
+
+            </form>
+            <a href="/login">ja sou cadastrado</a>
+        </div>
+        </div>
     </main>
     <%- include('./partials/footer'); %>

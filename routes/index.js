@@ -18,8 +18,8 @@ router.get('/contato', institucionalController.contato);
 //router.get('/contatos/:nome', contatosController.show);
 
 
-router.get('/pets', petsController.index);
-router.get('/pets/:nome', petsController.show);
+//router.get('/pets', petsController.index);
+//router.get('/pets/:nome', petsController.show);
 
 
 

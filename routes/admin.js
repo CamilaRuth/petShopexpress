@@ -42,5 +42,11 @@ router.get('/servicos/editar/:id', servicosController.editar);
 
 router.put('/servicos/editar/:id', upload.single('ilustracao'), servicosController.atualizar);
 
+router.get('/servicos/excluir/:id', servicosController.excluir);
+
+router.delete('/servicos/excluir/:id', servicosController.remover);
+
+
+
 
 module.exports = router;

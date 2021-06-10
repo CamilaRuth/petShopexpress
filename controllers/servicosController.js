@@ -1,9 +1,14 @@
+const {
+    request,
+    response
+} = require('express');
 const fs = require('fs');
 const path = require('path');
 
 const {
     uuid
 } = require('uuidv4');
+const servico = require('../middlewares/validacao/servico');
 
 const servicosPath = path.join('servicos.json');
 
@@ -82,6 +87,35 @@ const servicosController = {
         if (request.file) {
             servicoEncontrado.ilustracao = request.file.filename;
         }
+        let dadosJson = JSON.stringify(servicos);
+        fs.writeFileSync(servicosPath, dadosJson);
+
+        return response.redirect('/admin/servicos');
+
+    },
+
+    excluir: (request, response) => {
+        let {
+            id
+        } = request.params;
+
+        let servicoEncontrado = servicos.find((servico) => servico.id == id);
+
+        return response.render('servicoExcluir', {
+            titulo: 'Excluir servico',
+            servico: servicoEncontrado
+        });
+
+
+    },
+
+    remover: (request, response) => {
+        let {
+            id
+        } = request.params;
+        let servicoIndex = servico.findIndex((servico) => servico.id == id);
+
+        servicos.splice(servicoIndex, 1);
         let dadosJson = JSON.stringify(servicos);
         fs.writeFileSync(servicosPath, dadosJson);
 
