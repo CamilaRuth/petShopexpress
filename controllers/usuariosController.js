@@ -11,6 +11,13 @@ const {
     uuid
 } = require('uuidv4');
 
+const {
+    Usuario
+} = require('../database/models');
+const {
+    post
+} = require('../routes/users');
+
 const usuariosPath = path.join('usuarios.json');
 
 let usuarios = fs.readFileSync(usuariosPath, {
@@ -25,7 +32,7 @@ const usuariosController = {
         })
     },
 
-    salvar: (request, response) => {
+    salvar: async (request, response) => {
         const {
             nome,
             email,
@@ -35,15 +42,21 @@ const usuariosController = {
 
         const senhaCrypt = bcrypt.hashSync(senha, 10);
 
-        usuarios.push({
-            id: uuid(),
+        const novoUsuario = await Usuario.create({
             nome,
             email,
             senha: senhaCrypt
         });
 
-        let dadosJson = JSON.stringify(usuarios);
-        fs.writeFileSync(usuariosPath, dadosJson);
+        //usuarios.push({
+        //id: uuid(),
+        //nome,
+        //email,
+        //senha: senhaCrypt
+        //});
+
+        ///let dadosJson = JSON.stringify(usuarios);
+        //fs.writeFileSync(usuariosPath, dadosJson);
 
         response.redirect("/login");
 
@@ -57,12 +70,18 @@ const usuariosController = {
         })
     },
 
-    autenticacao: (request, response) => {
+    autenticacao: async (request, response) => {
         const {
             email,
             senha
         } = request.body;
-        const usuarioEncontrado = usuarios.find(usuario => usuario.email == email);
+
+        const usuarioEncontrado = await Usuario.findOne({
+            where: {
+                email
+            }
+        });
+        //const usuarioEncontrado = usuarios.find(usuario => usuario.email == email);
         if (usuarioEncontrado && bcrypt.compareSync(senha, usuarioEncontrado.senha)) {
 
             request.session.usuarioLogado = usuarioEncontrado;
